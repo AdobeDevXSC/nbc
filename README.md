@@ -2,8 +2,13 @@
 
 
 ## Environments
-- Preview: https://main--nbc--adobedevxsc.hlx.page/
-- Live: https://main--nbc--adobedevxsc.hlx.live/
+# English (en)
+- Preview: https://main--nbc--adobedevxsc.hlx.page/en/
+- Live: https://main--nbc--adobedevxsc.hlx.live/en/
+
+# French (fr)
+- Preview: https://main--nbc--adobedevxsc.hlx.page/fr/
+- Live: https://main--nbc--adobedevxsc.hlx.live/fr/
 
 ## Installation
 
