@@ -2,11 +2,11 @@
 
 
 ## Environments
-# English (en)
+English (en)
 - Preview: https://main--nbc--adobedevxsc.hlx.page/en/
 - Live: https://main--nbc--adobedevxsc.hlx.live/en/
 
-# French (fr)
+French (fr)
 - Preview: https://main--nbc--adobedevxsc.hlx.page/fr/
 - Live: https://main--nbc--adobedevxsc.hlx.live/fr/
 
