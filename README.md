@@ -1,9 +1,9 @@
-# National Bank Canada
+# National Bank of Canada
 
 
 ## Environments
-- Preview: https://main--national-bank-canada--adobedevxsc.hlx.page/
-- Live: https://main--national-bank-canada--adobedevxsc.hlx.live/
+- Preview: https://main--nbc--adobedevxsc.hlx.page/
+- Live: https://main--nbc--adobedevxsc.hlx.live/
 
 ## Installation
 
@@ -24,4 +24,4 @@ npm run lint
 1. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
 1. Start AEM Proxy: `aem up` (opens your browser at `http://localhost:3000`)
-1. Open the `national-bank-canada` directory in your favorite IDE and start coding :)
+1. Open the `nbc` directory in your favorite IDE and start coding :)
