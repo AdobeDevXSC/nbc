@@ -522,17 +522,17 @@ await window.hlx.plugins.run('loadLazy', pluginContext);
   };
 
   // eslint-disable-next-line import/no-relative-packages
-  const { initConversionTracking } = await import('../plugins/rum-conversion/src/index.js');
-  await initConversionTracking.call(context, document);
+  // const { initConversionTracking } = await import('../plugins/rum-conversion/src/index.js');
+  // await initConversionTracking.call(context, document);
 
   	// Add below snippet at the end of the lazy phase
-	if ((getMetadata('experiment')
-		|| Object.keys(getAllMetadata('campaign')).length
-		|| Object.keys(getAllMetadata('audience')).length)) {
-		// eslint-disable-next-line import/no-relative-packages
-		const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
-		await runLazy(document, { audiences: AUDIENCES }, pluginContext);
-	}
+	// if ((getMetadata('experiment')
+	// 	|| Object.keys(getAllMetadata('campaign')).length
+	// 	|| Object.keys(getAllMetadata('audience')).length)) {
+	// 	// eslint-disable-next-line import/no-relative-packages
+	// 	const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
+	// 	await runLazy(document, { audiences: AUDIENCES }, pluginContext);
+	// }
 }
 
 /**
