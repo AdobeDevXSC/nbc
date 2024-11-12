@@ -14,7 +14,7 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: white;
+  --background-color: #eef6fb;
   --light-color: #f0f0f0;
   --dark-color: #ccc;
   --text-color: black;
@@ -61,7 +61,7 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-xs);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -140,14 +140,14 @@ a.button:any-link, button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 1px solid #e41c23;
+  background-color: #e41c23;
   padding: 5px 30px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -209,7 +209,7 @@ main .section {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: #fff;
 }
 
 /* Experimentation Widget Styling */
