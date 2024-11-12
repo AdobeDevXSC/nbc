@@ -74,8 +74,10 @@ body.appear {
   display: block;
 }
 
-header {
-  height: var(--nav-height);
+@media (width >= 900px) {
+  header {
+    height: 134px;
+  }
 }
 
 h1, h2, h3,
