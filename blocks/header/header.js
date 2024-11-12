@@ -211,6 +211,11 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
+  //rearrange html
+  const lastSection = navWrapper.querySelector('.section:last-of-type');
+  lastSection.className = 'nav-top';
+  navWrapper.prepend(lastSection);
+
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
