@@ -12,3 +12,111 @@ footer .footer {
 footer .footer p {
   margin: 0;
 }
+
+footer .footer ul {
+  list-style: none;
+  padding-left: 0;
+  /* margin: 0; */
+}
+
+footer .footer .section > div > ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+footer .footer .section > div > ul > li > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer .footer .section:first-of-type > div > ul > li {
+  font-size: 0;
+}
+
+footer .footer .section > div > ul > li *{
+  font-size: 13px;
+  color: inherit;
+}
+
+footer .footer .section > div > ul > li > ul > li > ul {
+  margin-top: 0;
+}
+
+footer .footer .section > div > ul > li > ul > li > ul > li {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+/* second section */
+footer .footer .section:nth-of-type(2) > div > ul {
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+footer .footer .section:nth-of-type(2) .icon {
+  width: 32px;
+  height: 32px;
+  opacity: .5;
+}
+
+/* last section */
+footer .footer .section:last-of-type {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  gap: 6rem;
+}
+
+footer .footer .section:last-of-type > div {
+  margin: 0;
+  text-align: right;
+  flex: 1;
+}
+
+footer .footer .section:last-of-type ul {
+  margin: 0 0 1rem 0;
+  justify-content: flex-end;
+}
+
+footer .footer .section:last-of-type ul > li {
+  border-right: 1px solid #565656;
+  padding: 0 1rem 0 0;
+  font-weight: 600;
+  opacity: .6;
+}
+
+footer .footer .section:last-of-type ul > li:last-of-type {
+  border-right: none;
+}
+
+@media (width <= 900px) {
+  footer .footer .section:nth-of-type(2) > div > ul {
+    justify-content: center;
+  }
+
+  footer .footer .section:last-of-type > div {
+    text-align: left;
+  }
+  
+  footer .footer .section:last-of-type ul {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (width <= 768px) {
+  footer .footer .section:last-of-type {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  footer .footer .section:last-of-type > p {
+    text-align: center;
+  }
+}
