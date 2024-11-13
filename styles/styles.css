@@ -12,12 +12,13 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #e41c23;
+  --link-hover-color: #b7161b;
   --background-color: #eef6fb;
   --light-color: #f0f0f0;
   --dark-color: #ccc;
   --text-color: black;
+  --primary-color: #e41c23;
 
   /* fonts */
   --body-font-family: Gilroy, roboto-fallback;
@@ -85,16 +86,16 @@ h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
-  margin-top: 1em;
+  margin-top: .5em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
 h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
+h3 { font-size: var(--heading-font-size-l); font-weight: 400; }
+h4 { font-size: var(--heading-font-size-s) }
+h5 { font-size: var(--heading-font-size-xs) }
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
@@ -130,8 +131,8 @@ a:any-link {
 }
 
 a:hover {
-  text-decoration: underline;
   color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 /* buttons */
@@ -190,12 +191,12 @@ main img {
 
 /* sections */
 main .section {
-  padding: 32px 16px;
+  padding: 16px 16px;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   main .section {
-    padding: 32px 32px;
+    padding: 32px;
   }
 }
 
@@ -210,6 +211,47 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: #fff;
+}
+
+main .section.border-top {
+  border-top: 1px solid #ccc;
+}
+
+main .section.border-bottom {
+  border-bottom: 1px solid #ccc;
+}
+
+main .section.fragment > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+main .section.fragment p,
+main .section.fragment a {
+  margin: 0;
+}
+
+main .section.fragment a {
+  background-color: transparent;
+  color: #333;
+  border: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+main .section.fragment a:hover {
+  text-decoration: underline;
+}
+
+@media (width <= 900px) {
+  main .section.fragment > div {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 /* Experimentation Widget Styling */

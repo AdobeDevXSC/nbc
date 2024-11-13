@@ -1,59 +1,67 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
-export default async function decorate(block) {
-  const isJSON = block.classList.contains('is-json');
-  const link = block.querySelector('a'); 
-
-  async function fetchJson(link) {
-    const response = await fetch(link?.href);
-
-    if (response.ok) {
-      const jsonData = await response.json();
-      const data = jsonData?.data;
-      return data;
-    }
-    return 'an error occurred';
-  }
-
+function createCards(block, isLink = false) {
   const ul = document.createElement('ul');
 
-	[...block.children].forEach((row) => {
-		const anchor = document.createElement('a');
-		anchor.href = '';
-		const li = document.createElement('li');
-		while (row.firstElementChild) li.append(row.firstElementChild);
-		[...li.children].forEach((div) => {
+  // Loop through each child (row) of the block
+  [...block.children].forEach((row) => {
+    const li = document.createElement('li');
+    const anchor = isLink ? document.createElement('a') : null;
 
-		if (div.children.length === 1 && div.querySelector('picture')) {
-			div.className = 'cards-card-image';
-		} else if (div.children.length === 1 && div.querySelector('span')) {
-			div.className = 'cards-card-icon';
-		} else {
-			div.className = 'cards-card-body';
-		}
-		});
-		anchor.append(li);
-		ul.append(anchor);
-	});
-  
-  if (isJSON) {
-    const cardData = await fetchJson(link);
-    cardData.forEach((item) => {
-      const picture = createOptimizedPicture(item.image, item.title, false, [{ width: 320 }]);
-      picture.lastElementChild.width = '320';
-      picture.lastElementChild.height = '180';
+    // Move all child elements of `row` into the anchor (if link) or li
+    while (row.firstElementChild) {
+      isLink ? anchor.append(row.firstElementChild) : li.append(row.firstElementChild);
+    }
 
-      const createdCard = document.createElement('li');
+    // If it's a link card, update the href and remove the link element from children
+    if (isLink) {
+      [...anchor.children].forEach((div) => {
+        const link = div.querySelector('a');
+        if (link) {
+          anchor.href = link.href;
+          link.parentElement.remove();
+        }
 
-      createdCard.innerHTML = `
-        <div class="cards-card-body">
-			// place inner HTML structure based on JSON response as needed
-        </div>
-      `;
-      ul.append(createdCard);
-    });
-  }
+        // Apply classes based on the type of content inside the div
+        updateDivClasses(div);
+      });
+
+      li.append(anchor);
+    } else {
+      // If it's not a link, just apply classes to the li elements
+      [...li.children].forEach((div) => {
+        updateDivClasses(div);
+      });
+    }
+
+    ul.append(li);
+  });
 
   block.textContent = '';
   block.append(ul);
+}
+
+// Function to update div classes based on its content
+function updateDivClasses(div) {
+  if (div.children.length === 1 && div.querySelector('picture')) {
+    div.className = 'cards-card-image';
+  } else if (div.children.length === 1 && div.querySelector('span')) {
+    div.className = 'cards-card-icon';
+  } else {
+    div.className = 'cards-card-body';
+  }
+}
+
+export default async function decorate(block) {
+  const isPromotions = block.classList.contains('promotions');
+  const isLinks = block.classList.contains('links');
+  const isResources = block.classList.contains('resources');
+
+  if (isPromotions) {
+    createCards(block);
+  } else if (isLinks) {
+    createCards(block, true);
+  } else if (isResources) {
+    createCards(block);
+  } else {
+    createCards(block);
+  }
 }
