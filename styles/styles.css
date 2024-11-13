@@ -221,7 +221,7 @@ main .section.border-bottom {
   border-bottom: 1px solid #ccc;
 }
 
-main .section.fragment > div {
+main .section.link-image-fragment > div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -229,12 +229,12 @@ main .section.fragment > div {
   gap: 10rem;
 }
 
-main .section.fragment p,
-main .section.fragment a {
+main .section.link-image-fragment p,
+main .section.link-image-fragment a {
   margin: 0;
 }
 
-main .section.fragment a {
+main .section.link-image-fragment a {
   background-color: transparent;
   color: #333;
   border: 0;
@@ -243,12 +243,12 @@ main .section.fragment a {
   font-size: 14px;
 }
 
-main .section.fragment a:hover {
+main .section.link-image-fragment a:hover {
   text-decoration: underline;
 }
 
 @media (width <= 900px) {
-  main .section.fragment > div {
+  main .section.link-image-fragment > div {
     gap: 1rem;
     flex-direction: column;
   }
