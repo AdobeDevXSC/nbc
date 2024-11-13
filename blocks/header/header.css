@@ -3,8 +3,11 @@ header .nav-wrapper {
   background-color: #fff;
   width: 100%;
   z-index: 2;
-  /* position: fixed; */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+header .nav-wrapper.scroll {
+  position: fixed;
 }
 
 header nav#nav {
@@ -474,6 +477,10 @@ header .nav-top > div > ul:nth-of-type(2) li a {
 
 header .nav-top > div > ul:nth-of-type(2) li a .icon {
   vertical-align: middle;
+}
+
+header .nav-top.hide {
+  display: none;
 }
 
 @media screen and (width <= 900px) {
