@@ -195,6 +195,10 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  const aLink = navBrand.querySelector('a');
+  const brandImgLogoTitle = aLink.querySelector('img').getAttribute('data-icon-name');
+  aLink.title = brandImgLogoTitle;
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
