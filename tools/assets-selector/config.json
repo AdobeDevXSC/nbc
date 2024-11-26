@@ -1,0 +1,33 @@
+{
+  "blockName": [
+    {
+      "mimeType": "video/*",
+      "value": "Video"
+    }
+  ],
+  "blockTemplate": [
+    {
+      "mimeType": "video/*",
+      "value": "<img src=\"${posterUrl}\" alt=\"${videoUrl}\" />"
+    }
+  ],
+  "copyMode": [
+    {
+      "mimeType": "image/*",
+      "value": "use-alt-text"
+    }
+  ],
+  "filterSchema": [ 
+    { 
+      "header": "Assets Tags", 
+      "groupKey": "AssetTagsGroup", 
+      "fields": [ 
+        { 
+            "element": "taggroup", 
+            "name": "property=metadata.application.xcm:keywords.id", 
+            "columns": 3 
+        } 
+      ] 
+    } 
+	] 
+}
